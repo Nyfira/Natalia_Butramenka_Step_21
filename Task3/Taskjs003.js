@@ -4,4 +4,3 @@ while (y < x ) {
     document.write('#');
     y++;
 };
-

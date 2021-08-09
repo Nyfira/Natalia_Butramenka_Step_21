@@ -47,7 +47,7 @@
 //    x--; 
 //};
 //document.write(a);
- 
+
 // Задача 6
 //let ans;  
 //do {
@@ -68,15 +68,15 @@
 //document.write(`${fifty}`);
 
 // Задача 1дз
-//let a = +prompt(`1`);
-//let b = +prompt(`2`);
+//let a = +prompt(`start`);
+//let b = +prompt(`finish`);
 //let result = 0;
-//let start =(a>b ? b : a );
-//let finish =(a<b ? b: a );
-//while (a !== b) {
-//    result = result + start;
-//    start = start + 1;
+//let start =( a < b ? a : b );
+//while ( a !== b ) {
+//    result = result + a;
+//    a++;
 //};
+//document.write(`${result+b}`);  
 
 // Задача 2дз
 //let a = +prompt(`1`);
@@ -92,3 +92,70 @@
 //    }
 //    small--;
 //};
+
+// Задача 3 дз
+//let a = +prompt(`Number`);
+//let result = 0;
+//while (a !== result) {
+//   if (a%result === 0) {
+//      document.write(`${result}`);
+//      }
+//    result++;
+//};
+
+// Задача 4 дз
+//let num = prompt(`Number`);
+//let count = 0;
+//let ches = 1;
+//let i =0;
+//let = fix (num[i]) ? count++ : count;
+//i++;
+//let b = Math.floor((`${num/ches}`)%10);
+//while (i < count) {
+//};
+
+// Задача 4 дз 2 вар (через machfloor и счетчик)
+
+// Задача 5 дз 
+//let p = 0;
+//let o = 0;
+//let zero = 0;
+//let ch = 0;
+//let nch = 0;
+//let i = 10;
+//while (i !== 0) {
+//   let number = +prompt(`Введите число`);
+//   number > 0 ? p++ : p;
+//   number < 0 ? o++ : o;
+//   number === 0 ? zero++ : zero;
+//   number%2 ==0 ? ch++ : ch;
+//  number%2 !== 0 ? nch++ : nch;
+//   i--;
+//};
+//alert(`pologitelny${p}, otritsatelny${o}, zero${zero}, chet${ch}, nechet${nch}`);
+
+// Задача N
+//let x = +prompt(`Введите число?`);
+//let y = 1;
+//while (y <= x) {
+//    x--;
+//    document.write(` ${x}`);
+//};
+ 
+// Задача NN2
+//let x = +prompt(`Calculer`);  
+//let i=0;
+//while (i <= 10) {
+//    b=x*i;
+//    i++;
+//    document.write(` ${b}`);
+//};
+
+// Задача NN3
+//let a = +prompt(`start`);
+//let result = 0;
+//while ( a !== 0 ) {
+//    result = result + a;
+//    a--;
+//};
+//document.write(`${result}`);  

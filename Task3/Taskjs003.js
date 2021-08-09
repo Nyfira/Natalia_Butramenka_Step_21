@@ -159,3 +159,34 @@
 //    a--;
 //};
 //document.write(`${result}`);  
+
+// Задача NN4
+//let num = +prompt(`start`);
+//for(let i=1; i<=100; i++){
+//    if (i%num === 0) {
+//        document.write(i);
+//    };
+//};
+
+// Задача NN5
+//let num = +prompt(`start`);
+//let num2 = +prompt(`finish`);
+//let start =( num < num2 ? num : num2 );
+//let coant = 0;
+//for(let i=num; i<=num2; i++){
+//    coant++;
+//    if (coant%4 === 0) {
+//    document.write(` ${i}`);
+//    };
+//};
+
+// Задача NN6
+//let num = +prompt(`start`);
+//let isprostoe = true;
+//for(let i=2; i<=num; i++){
+//    if (num%i === 0) {
+///        isprostoe = false;
+//       break;
+//    };
+//};
+//isprostoe ? alert(`prostoe`) : alert(`ne prostoe`);

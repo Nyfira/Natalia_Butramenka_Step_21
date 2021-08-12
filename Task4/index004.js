@@ -94,5 +94,5 @@ console.log(chet_nechet(3,9));
     
 // 10
 
-
+ggg
 

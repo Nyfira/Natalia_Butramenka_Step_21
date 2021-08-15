@@ -123,15 +123,22 @@
 //};
 
 // Задача 9
-let a = 1;
-let b = 0;
-while (b<=10 && a<=9) {
-   c=a*b;
-   a++;
-   b++;
-   
+let x = 2;  
+let i=1;
+while (i <= 10) {
+    b=x*i;
+document.write(String(`${x}*${i}=${b}\n`)); 
+    
+    if (i==10) {
+       
+      x++;
+       
+ };
+ i++;
 };
-document.write(`${a}*${b}=${c}`);
+
+
+
 
 // Задача 10
 //let n = String(`Загадайте число от 0 до 100.`);

@@ -114,7 +114,51 @@
 //let qvest1 = prompt(`Введите цифру: 1, 2 или 3.`);
 //let qvest2 = prompt(`Правда что Земля квадратная? (да, нет, незнаю)`);
 //let qvest3 = prompt(`Все синие ягоды ядовитые? (да, нет, незнаю)`);
-//let x = Number(qvest1 == `1` && `10` || qvest1 == `2` && `20` || qvest1 == `3` && `30`);
-//let y = Number(qvest2 == `да` && `0` || qvest2 == `нет` && `30` || qvest2 == `незнаю` && `10`);
-//let z = Number(qvest3 == `да` && `10` || qvest3 == `нет` && `30` || qvest3 == `незнаю` && `10`);
+//let x = Number(qvest1 == `1` && `0` || qvest1 == `2` && `0` || qvest1 == `3` && `2`);
+//let y = Number(qvest2 == `да` && `0` || qvest2 == `нет` && `2` || qvest2 == `незнаю` && `0`);
+//let z = Number(qvest3 == `да` && `0` || qvest3 == `нет` && `2` || qvest3 == `незнаю` && `0`);
 //alert(`Поздравляю! Вы набрали ${x+y+z} баллов.`);
+
+// Задача 10
+let day = +prompt(`Введите число:`);
+let month = +prompt(`Введите месяц:`);
+let year = +prompt(`Введите год:`);
+alert (`${day}.${month}.${year}г.`);
+if (day == 0 || month == 0 || year == 0 || month>12) {
+    alert (`некорректная дата`);
+} else if (day == 31 && month == 12) {
+   alert (`01.01.${year+1}г.`);
+} else if (year%400 == 0 || year%4 == 0 && year%100 !== 0 && month == 2) {
+    if (day<29) {
+        alert (`${day+1}.${month}.${year}г.`);
+    } else if (day == 29) {
+        alert (`01.${month+1}.${year}г.`);
+    } else {
+        alert (`некорректная дата`);
+    };
+} else if (month == 2) {
+    if (day<28) {
+        alert (`${day+1}.${month}.${year}г.`);
+    } else if (day == 28) {
+        alert (`01.${month+1}.${year}г.`);
+    } else {
+        alert (`некорректная дата`);
+    };
+} else if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10) {
+    if (day<31) {
+        alert (`${day+1}.${month}.${year}г.`);
+    } else if (day == 31) {
+        alert (`01.${month+1}.${year}г.`);
+    } else {
+        alert (`некорректная дата`);
+    };
+} else if (month == 4 || month == 6 || month == 9 || month== 11) {
+   if (day<30) {
+       alert (`${day+1}.${month}.${year}г.`);
+   } else if (day == 30) {
+       alert (`01.${month+1}.${year}г.`);
+   } else {
+       alert (`некорректная дата`);
+   };
+};
+

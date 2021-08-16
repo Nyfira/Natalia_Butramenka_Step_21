@@ -9,28 +9,14 @@
 //console.log(num(154,154));
 
 //  Task 2
-//function fak(a) {
+//function num(a) {
 //let x = 1;
-//while (a > 0) {
+//for (a; a > 0; a--) {
 //    x = x * a;
-//    a--  
 //    };
+//return alert(x); 
 //};
-//console.log(fak(5));
-
-//alert(`${x}`);
-
-
-
-// Задача NN2
-//let a = +prompt(`start`);
-//let result = 1;
-// while ( a > 0 ) {
-//    result = result * a;
-//   a--;
-//};
-//document.write(`${result}`); 
-
+//console.log(num(6));
 
 //  Task 3
 //function num3(a,b,c) {
@@ -50,3 +36,37 @@
 //};
 //console.log(square(2));
     
+// Task 5
+//function sov(a) {
+//let result = 0;
+//let i = 1;
+//while (i<a) {
+//    if (a%i === 0) {
+//        result=result+i;
+//    };
+//    i++;
+//};
+//let chek = (result == a) ? `совершенное число`:
+//`повторите попытку`;
+//return alert(chek);
+//};
+//console.log(sov(6));
+
+// Task 6
+//function sov(a) {
+    let num1 = +prompt(`num1`);
+    let num2 = +prompt(`num2`);
+let result = 0;
+let i = 1;
+while (i<a) {
+    if (a%i === 0) {
+        result=result+i;
+    };
+    i++;
+};
+let chek = (result == a) ? `совершенное число`:
+`повторите попытку`;
+//return alert(chek);
+//};
+//console.log(sov(6));
+

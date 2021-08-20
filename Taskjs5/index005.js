@@ -228,37 +228,6 @@
 //pryamoy(koord)
 
 
-///dz 1 !!!
-//let auto = {
-//    prozvoditel : `Volkswagen`,
-//    model : `Polo`,
-//    age : 2015,
-//    speed : 10,
-//};
-//function automobil () {
-//  return alert(auto[key])
-//};
-
-//let key = prompt(`Что Вы хотите узнать об автомобиле?`);
-//automobil();
-
-//function time () {
-//    let t = mile/(auto.speed);
-//    
-//  return alert(`На дорогу Вы потратите ${t} часов.`)
-//};
-//let mile = prompt(`Какое расстояние Вам необходимо проехать?`);
-//time();
-
-///dz 2
-//let auto = {
-//    prozvoditel : `Volkswagen`,
-//    model : `Polo`,
-//    age : 2015,
-//    speed : 10,
-//};
-
-
 // massif
 // Task 1
 // 1

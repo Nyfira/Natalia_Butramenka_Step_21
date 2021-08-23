@@ -85,8 +85,8 @@ let arr1 = [ 13, 115, 200, 14, 1 ];
 let arr2 = [ 10, 11, 15, 14, 8 ];
 
 function Summ(arr1, arr2) {
-    let newarr= arr1.concat(arr2);
-    let newarr0
-       document.write(newarr0); 
+    let newarr= Summ.concat(arr1, arr2);
+    newarr2 = newarr.filter((item,index)=>a.indexOF(item)===index);
+       document.write(newarr2); 
 };
 Summ(newarr0);

@@ -453,7 +453,7 @@ let gruppa = {
     facultet: `Medicin`,
 };
 
-//function VidAudforGrupp(a, gr) {
+// function VidAudforGrupp(a, gr) {
 //    document.write(`<p>Для ${gr.name} на факультете ${gr.facultet} подходят следующие аудитории:</p>`);
 //    let audFac = a.filter(a => a.facultet == gr.facultet);
 //    let aud = audFac.filter(a => a.sit >= gr.number);
@@ -464,12 +464,47 @@ let gruppa = {
 //            number++;
 //            document.write(aud2);
 //        };
-//};
-//VidAudforGrupp(auditory, gruppa)
+// };
+// VidAudforGrupp(auditory, gruppa)
 
 // 4.4
-let sit = prompt(`Number`);
-function VidAudSit(a, n) {
-    
+
+// function VidAudSit(auditory_list) {
+//     function compareNumeric(auditory_a, auditory_b) {
+//         if (auditory_a.sit > auditory_b.sit) return 1;
+//         if (auditory_a.sit == auditory_b.sit) return 0;
+//         if (auditory_a.sit < auditory_b.sit) return -1;
+//       }
+//     let result = Array.from(auditory_list);
+//     result.sort(compareNumeric);
+//     for (let i = 0; i < result.length; i++) {
+//         let num = i+1;
+//         str = (`${num}) ${result[i].name}: ${result[i].sit} -- ${result[i].facultet}`);
+//         str += `<br>`;
+//         document.write(str);
+//     };
+//};
+// VidAudSit(auditory)
+
+// 4.5
+
+console.log(auditory)
+function VidAudSit(auditory_list) {
+    function compareNumeric(auditory_a, auditory_b) {
+        if (auditory_a.name > auditory_b.name) return 1;
+        if (auditory_a.name == auditory_b.name) return 0;
+        if (auditory_a.name < auditory_b.name) return -1;
+    }
+
+    let result = Array.from(auditory_list);
+    result.sort(compareNumeric);
+    console.log(result)
+    for (let i = 0; i < result.length; i++) {
+        let num = i+1;
+        str = (`${num}) ${result[i].name}: ${result[i].sit} -- ${result[i].facultet}`);
+        str += `<br>`;
+        document.write(str);
+    };
+
 };
-VidAudSit(auditory, sit)
+VidAudSit(auditory)

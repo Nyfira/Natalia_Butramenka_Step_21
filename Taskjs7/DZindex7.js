@@ -168,12 +168,28 @@
 // razdelitel(`nyfira0ky0kish0supper`, `0`);
 
 // Task 10
-let shablon = [`Today is %1 %2.%3.%4`, `Monday`, 10,
-    8, 2020];
-    console.log(shablon)
+let shablon = [`Today is %1 %2.%3.%4`, `Monday`, 10, 8, 2020];
 function shablonTest(a) {
     let text = a[0].split(`%`);
-    console.log(text)   
+    let newArr =[];
+    for (i=1; i<text.length; i++) {
+        newArr=newArr.concat(text[i]);
+    };
+    let str=newArr.join(``);
+    let text2 = str.split(``);
+    for (i=0; i<text2.length; i++) {
+        if (text2[i]==` `) {
+            text2.splice(i, 1);
+        };
+    };
+    for (i=0; i<text2.length; i++) {
+        for (j=0; j<shablon.length; j++) {
+            if (j == text2[i]) {
+                text2[i]=shablon[j];
+            };
+        };
+    };
+    console.log(text[0],...text2)
 };
 shablonTest(shablon);
 

@@ -226,14 +226,9 @@ let text3 = `More...`
 // Task 3
 
 class CssClass {
-  constructor() {
-   
+  constructor(nameCss) {
+    this.nameCss=nameCss;
     this.arrStylesCss=[];
-    this.arrNameCss=[];
-  }
-
-  SetNameCss(nameCss) {
-    this.arrNameCss.push(nameCss)
   }
 
   SetStyleCss2(_name, _value) {
@@ -272,15 +267,14 @@ class CssClass {
 
     let result = `<style>`;
     
-    for(let i=0; i<this.arrNameCss; i++) {
-      result += ` .`+this.arrNameCss[i]+` {`;
-      // for(let i=0; i<this.arrStylesCss.length; i++) {
-      //   result += this.arrStylesCss[i].name +`: `+ this.arrStylesCss[i].value+`; `;
-      // }
+    if(this.nameCss) {
+      result += ` .`+this.nameCss+` {`;
+      for(let i=0; i<this.arrStylesCss.length; i++) {
+        result += this.arrStylesCss[i].name +`: `+ this.arrStylesCss[i].value+`; `;
+      }
       result+= `} `;
     }
-    
-     result+= `</style>`;
+    result+= `</style>`;
 
      return result;
   };
@@ -314,13 +308,11 @@ let arrStylesCss = [
   },
 ]
 
-let list = new CssClass()
-list.SetNameCss(`text`)
+let list = new CssClass(`text`)
+
 list.SetStyleCss2(arrStylesCss[0].name, arrStylesCss[0].value)
 list.SetStyleCss2(arrStylesCss[1].name, arrStylesCss[1].value)
 list.SetStyleCss2(arrStylesCss[2].name, arrStylesCss[2].value)
-list.SetNameCss(`img`)
-
 
 //list.DeleteStyleCss(`text-align`)
 
@@ -330,8 +322,8 @@ list.GetCss();
 
 console.log(list.GetCss());
 
-let list2 = new CssClass()
-list2.SetNameCss(`img`)
+let list2 = new CssClass(`img`)
+
 list2.SetStyleCss2(`width`, `100%`)
 
 console.log(list2);

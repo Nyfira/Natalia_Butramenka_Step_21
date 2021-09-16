@@ -8,19 +8,53 @@
 //     }
 // }
 
+
 // Task 2
 
-document.getElementById("click123").onmousemove = function (event){
+// let clickChek = 
 
-    document.getElementById("y").innerHTML = (`Y = `+event.offsetY);
-    document.getElementById("x").innerHTML = (`X = `+event.offsetX);
+// document.getElementById("click123").onmousemove = function (event){
+//     document.getElementById("y").innerHTML = (`Y = `+event.offsetY);
+//     document.getElementById("x").innerHTML = (`X = `+event.offsetX);
+// }
 
-}
-document.onclick = function(event1) {
-if (event1===1) {
-    document.getElementById("lr").innerHTML = ('Левая кнопка');
-}
-}
+// function checkClick(event) {
+//     if (event === onclick) {
+//         document.getElementById("lr").innerHTML = (`left button`);
+//     } else {
+//         document.getElementById("lr").innerHTML = (`right button`);
+//     }
+// }
 
-document.oncontextmenu = document.getElementById("lr").innerHTML = ('Правая кнопка');
-    
+// Task 3
+
+// let block = document.querySelector('#block');
+// let btn = document.querySelector('#btn');
+// let isShow = true;
+
+// function showHide() {
+//     if(isShow) {
+//     block.style.display = 'none';
+//     isShow=false;
+// } else {
+//     block.style.display = 'bloc';
+//     isShow=true;
+// }
+// }
+// btn.addEventListener('click', showHide)
+
+// Task 4
+
+// let block1 = document.querySelector('#block1');
+// let block2 = document.querySelector('#block2');
+// let block3 = document.querySelector('#block3');
+
+// let button1 = document.querySelector('#btn1');
+// let button2 = document.querySelector('#btn2');
+// let button3 = document.querySelector('#btn3');    
+
+// let isShow1 = true;
+// let isShow2 = false;
+// let isShow3 = false;
+
+// function showHide()

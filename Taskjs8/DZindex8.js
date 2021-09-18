@@ -103,7 +103,7 @@ class HtmlElement {
     this.arrHtmlTegs.unshifl(element)
   }
 
-  getHtml() {
+  GetHtml() {
     let result=`<`+this.nameTeg+` `;
     for(let i=0; i<this.arrAtribut.length; i++) {
       result += this.arrAtribut[i].name +`="`+ this.arrAtribut[i].value+`" `;
@@ -114,7 +114,7 @@ class HtmlElement {
         result += this.text;
       }
       for(let i=0; i<this.arrHtmlTegs.length; i++) {
-        result += this.arrHtmlTegs[i].getHtml();  
+        result += this.arrHtmlTegs[i].GetHtml();  
       }
       result += `</`+this.nameTeg+`>`;
     } else {
@@ -219,8 +219,9 @@ let text3 = `More...`
 
 // htmlElement.AddHtmlElementToEnd(htmlElement2)
 
-// console.log(htmlElement.getHtml());
-// document.write(htmlElement.getHtml());
+// htmlElement.GetHtml();
+// console.log(htmlElement.GetHtml());
+// document.write(htmlElement.GetHtml());
 
 
 // Task 3
@@ -231,30 +232,52 @@ class CssClass {
     this.arrStylesCss=[];
   }
 
-  SetStyleCss2(_name, _value) {
+  SetStyleCss2(_name, _paramName, _value) {
     
     let tmpStyleCss = {
           name: _name,
+          paramName: _paramName,
           value: _value,
     };
     this.SetStyleCss(tmpStyleCss);
   }
 
   SetStyleCss(tmpStyleCss) {
-    
-    for(let i=0; i<this.arrStylesCss.length; i++) {
-    if (this.arrStylesCss[i].name === tmpStyleCss.name) {
-          this.arrStylesCss[i].value = tmpStyleCss.value;
-          return;
+    let tmpParams = {
+        name: tmpStyleCss.paramName,
+        value:  tmpStyleCss.value,
+      };
+
+    for(let i=0; i<this.arrStylesCss.length; i++) 
+    {
+      if (this.arrStylesCss[i].name === tmpStyleCss.name) 
+      {
+        for(let j=0; j < this.arrStylesCss[i].params.length; j++) 
+        {
+          if (this.arrStylesCss[i].params[j].name === tmpParams.name)
+          {
+            this.arrStylesCss[i].params[j].value = tmpParams.value;
+            return;
+          }
+        }
+
+        this.arrStylesCss[i].params.push(tmpParams);
+        return;
       }
     }
-    this.arrStylesCss.push(tmpStyleCss);
+
+    let tmpStyle = {
+      name: tmpStyleCss.name,
+      params: [tmpParams]
+    };
+
+    this.arrStylesCss.push(tmpStyle);
   }
  
   DeleteStyleCss(tmpStyleCss) {
 
     let count=0;
-    for(let i=0; i<this.arrStylesCss.length; i++) {
+    for(let i=0; i < this.arrStylesCss.length; i++) {
       if (this.arrStylesCss[i].name === tmpStyleCss) {
             this.arrStylesCss.splice(count, 1);
             return;
@@ -267,12 +290,17 @@ class CssClass {
 
     let result = `<style>`;
     
-    if(this.nameCss) {
-      result += ` .`+this.nameCss+` {`;
-      for(let i=0; i<this.arrStylesCss.length; i++) {
-        result += this.arrStylesCss[i].name +`: `+ this.arrStylesCss[i].value+`; `;
+    if(this.arrStylesCss) {
+
+      for(let i=0; i < this.arrStylesCss.length; i++) {
+        result += ` .`+this.arrStylesCss[i].name+` {`;
+        for(let j=0; j < this.arrStylesCss[i].params.length; j++) 
+        {
+          result += this.arrStylesCss[i].params[j].name + `: `+ this.arrStylesCss[i].params[j].value + `; `;
+        }
+        result+= `} `;
       }
-      result+= `} `;
+
     }
     result+= `</style>`;
 
@@ -280,60 +308,91 @@ class CssClass {
   };
 
 }
+ 
+// let style = new CssClass(`lol`);
 
-let arrStylesCss = [
-  {
-    name: `color`,
-    value: `blue`,
-  },
-  {
-    name: `font-size`,
-    value: `18px`,
-  },
-  {
-    name: `text-align`,
-    value: `right`,
-  },
-  {
-    name: `font-style`,
-    value: `italic`,
-  },
-  {
-    name: `text-decoration`,
-    value: `overline`,
-  },
-  {
-    name: `text-decoration-color`,
-    value: `#808000`,
-  },
-]
+// style.SetStyleCss2(`text`, `color`, `blue`);
+// style.SetStyleCss2(`text`, `font-size`, `18px`);
+// style.SetStyleCss2(`text`, `text-align`, `right`);
 
-let list = new CssClass(`text`)
+// style.SetStyleCss2(`img`, `width`, `100%`);
 
-list.SetStyleCss2(arrStylesCss[0].name, arrStylesCss[0].value)
-list.SetStyleCss2(arrStylesCss[1].name, arrStylesCss[1].value)
-list.SetStyleCss2(arrStylesCss[2].name, arrStylesCss[2].value)
-
-//list.DeleteStyleCss(`text-align`)
-
-console.log(list);
-
-list.GetCss();
-
-console.log(list.GetCss());
-
-let list2 = new CssClass(`img`)
-
-list2.SetStyleCss2(`width`, `100%`)
-
-console.log(list2);
-console.log(list.GetCss(),list2.GetCss());
-
-
-list2.GetCss();
+// style.DeleteStyleCss(`img`);
+// console.log(style.GetCss());
 
 
 // Task 4
+
+class HtmlBlock {
+  constructor(styleCss, htmlElement) {
+    this.styleCss = styleCss;
+    this.htmlElement = htmlElement;
+
+  }
+
+  GetCode()
+  {
+     return  this.styleCss.GetCss() + this.htmlElement.GetHtml();
+  }
+}
+
+let styleCss = new CssClass(`style`);
+
+styleCss.SetStyleCss2(`wrap`, `display`, `flex`);
+styleCss.SetStyleCss2(`block`, `width`, `300px`);
+styleCss.SetStyleCss2(`block`, `margin`, `10px`);
+styleCss.SetStyleCss2(`img`, `width`, `100%`);
+styleCss.SetStyleCss2(`text`, `text-align`, `justify`);
+styleCss.GetCss();
+
+console.log(styleCss.GetCss());
+
+let htmlElementDiv = new HtmlElement(`div`, true);
+
+htmlElementDiv.SetAtribut2(`id`, `wrapper`);
+htmlElementDiv.SetAtribut2(`class`, `wrap`);
+
+let htmlElementDiv1 = new HtmlElement(`div`, true);
+
+htmlElementDiv1.SetAtribut2(`class`, `block`);
+
+let htmlElementH = new HtmlElement(`h3`, true);
+
+htmlElementH.SetText(text1);
+
+let htmlElementImg = new HtmlElement(`img`, false);
+
+htmlElementImg.SetAtribut2(`class`, `img`);
+htmlElementImg.SetAtribut2(`src`, `lipsum.jpg`);
+htmlElementImg.SetAtribut2(`alt`, `Lorem Impus`);
+
+let htmlElementP = new HtmlElement(`p`, true);
+
+htmlElementP.SetAtribut2(`class`, `text`);
+htmlElementP.SetText(text2);
+
+let htmlElementA = new HtmlElement(`a`, true); 
+
+htmlElementA.SetAtribut2(`href`, `https://www.lipsum.com/`);
+htmlElementA.SetAtribut2(`target`, `_blank`);
+htmlElementA.SetText(text3);
+
+htmlElementP.AddHtmlElementToEnd(htmlElementA);
+htmlElementDiv1.AddHtmlElementToEnd(htmlElementH);
+htmlElementDiv1.AddHtmlElementToEnd(htmlElementImg);
+htmlElementDiv1.AddHtmlElementToEnd(htmlElementP);
+
+htmlElementDiv.AddHtmlElementToEnd(htmlElementDiv1);
+
+htmlElementDiv.AddHtmlElementToEnd(htmlElementDiv1);
+
+htmlElementDiv.GetHtml()
+
+console.log(htmlElementDiv.GetHtml())
+
+let htmlBlok = new HtmlBlock(styleCss, htmlElementDiv);
+
+document.write(htmlBlok.GetCode());
 
 
 

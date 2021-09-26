@@ -5,8 +5,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            bottom: 150%;
+            margin-left: -60px;
+            position: relative;
+        };
+        
+    </style>
+    
 </head>
 <body>
-    <script src=DZindex010.js></script>
+    <div>
+        <h3>Task 1</h3>
+        <div style="background-color: bisque; text-align: center; padding: 15px; width: 350px; margin: 10px;">
+            <p>Enter yuor name (name can't contain digits):</p>
+            <div><input id="text" type="text" size="40">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Task 2</h3>
+        <div style="background-color: bisque; text-align: center; padding: 15px; width: 350px; margin: 10px;">
+            <button id="open1" style="width: 100px; height: 30px;">Open modal</button>
+            <div id="modal" style="background-color: rgb(139, 220, 226); margin: 10px; padding: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; display: none;">
+                <h3>Hello from Modal Window!</h3>
+                <button id="close1" style="width: 300px; height: 30px;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Task 3</h3>
+        <div style="width: 100vw; height: 100vh; background: repeating-linear-gradient(to right, #2fa560, #2fa560 150px, #1ebe66 150px, #1ebe66 300px ); padding: 30px;">
+            <div id="space" onclick="javascript:getNewXY(this, event);" style="height: 100vh; border-style: solid; border-color: white; ">
+                <div id="ball" style="background: repeating-radial-gradient(circle, #000000, #000000 15px, #ffffff 15px, #ffffff 30px); width: 90px; height: 90px; border-radius: 50px; position: relative; top:100px; left:100px; transition: all 2s;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h3>Task 4</h3>
+            <div style="background-color: bisque; text-align: center; padding: 15px; width: 350px; margin: 10px;">
+                <div style="background-color: black; border-radius: 10px; margin: 10px; padding: 10px; display: flex; flex-direction: row; justify-content: space-around; align-items: center; ">
+                    <div id="light1" style="background-color: red; width: 90px; height: 90px; border-radius: 50px;">
+                    </div>
+                    <div id="light2" style="background-color: gray; width: 90px; height: 90px; border-radius: 50px;">
+                    </div>
+                    <div id="light3" style="background-color: grey; width: 90px; height: 90px; border-radius: 50px;">
+                    </div>
+                </div>
+                <button id="click" style="width: 100px; height: 100px; border-radius: 10px;"><h4>NEXT</h4></button>
+            </div>
+    </div> 
+    
+    <div>
+        <h3>Task 5</h3>
+        <div style="width: 600px; background-color: bisque; text-align: left; padding: 10px; margin: 10px;">
+            <ol id="str">
+                <li id="str1">"JavaScript for Kids: A Playful Introduction to Programming" by Nick Morgan</li>
+                <li id="str2">"Eloquent JavaScript: A Modern Introduction to Programming" by Margin Hawerbake</li>
+                <li id="str3">"JavaScript: The Good Parts" by Crockford</li>
+                <li id="str4">"Programming JavaScript Application: Robust Web Architecture with Node, HTML5, and Moderns JS Libraries" by Eric Elliott</li>
+                <li id="str5">"Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript" by David Herman</li>
+                <li id="str6">"JavaScript: The Definitive Guide" by David Flanagan</li>
+                <li id="str7">"You Don't Know JS" by Kyle Simpson</li>
+            </ol>
+        </div>
+    </div>
+
+    <div>
+        <h3>Task 6</h3>
+        <div id="block" style="width: 350px; height: 100px; background-color: bisque; margin: 10px; padding: 10px; display: flex; flex-direction: row; justify-content: space-around; ">
+            <button id="btn" style="width: 100px; height: 30px; margin-top: 70px;">Button 1<span id="tooltip" class="tooltip">Tool tip 1</span></button>
+            <button id="btn2" style="width: 100px; height: 30px; margin-top: 10px;">Button 2<span id="tooltip2" class="tooltip">Tool tip 2</span></button>
+        </div>
+    </div>
+
+    <script src=DZindex10.js></script>
 </body>
 </html>

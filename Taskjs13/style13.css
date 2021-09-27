@@ -1,0 +1,22 @@
+.contener {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+};
+.btn {
+  color: darkviolet;
+    width: 100%;
+}
+
+.contener2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    
+};
+
+

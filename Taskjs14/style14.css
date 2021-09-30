@@ -1,0 +1,78 @@
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.fon {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: cadetblue;
+}
+
+.form {
+    margin: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 600px;
+}
+ .head {
+    padding-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+ }
+
+.text {
+    margin: 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    color: blueviolet;
+    width: 70%;
+    height: 40px;
+    color: rgb(0, 102, 255);
+    border: 1px solid orange;
+}
+
+.btnadd {
+    width: 40px;
+    height: 40px;
+    background-color: teal;
+    border: none;
+    color: white;
+}
+
+.task {
+    display: flex;
+    text-align: top;
+    justify-content: space-around;
+    flex-direction: column;
+    color: rgb(0, 102, 255);
+}
+
+.end {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 20px;
+}
+
+.progres {
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.remove {
+    
+    padding: 0 20px;
+    background-color: teal;
+    border: none;
+    color: white;
+}

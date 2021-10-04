@@ -48,19 +48,23 @@
 }
 
 .task {
+    padding: 0 10%;
     display: flex;
-    text-align: top;
-    justify-content: space-around;
-    flex-direction: column;
+    text-align: center;
+    justify-content: start;
+    flex-direction: column; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
     color: rgb(0, 102, 255);
 }
 
 .end {
+    padding: 0 10%;
     display: flex;
     text-align: center;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
-    margin: 20px;
+    margin: 20px 0; 
 }
 
 .progres {
@@ -70,7 +74,6 @@
 }
 
 .remove {
-    
     padding: 0 20px;
     background-color: teal;
     border: none;

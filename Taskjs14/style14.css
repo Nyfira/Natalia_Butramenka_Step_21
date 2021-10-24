@@ -1,0 +1,117 @@
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.fon {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: cadetblue;
+    border-radius: 10px;
+}
+
+.form {
+    margin: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    width: 600px;
+    border-radius: 10px;
+}
+ .head {
+    padding-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+ }
+
+.text {
+    margin: 20px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-style: italic;
+    width: 70%;
+    height: 40px;
+    color: rgb(0, 102, 255);
+    border: 2px solid orange;
+    border-radius: 10px;
+}
+
+.btnadd {
+    width: 40px;
+    height: 40px;
+    background-color: teal;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.task {
+    padding: 0 10%;
+    display: flex;
+    text-align: center;
+    justify-content: start;
+    flex-direction: column; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: rgb(0, 102, 255);
+}
+
+.end, .bonus {
+    padding: 0 10%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 20px 0; 
+}
+
+.progress {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 200px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 7px;
+}
+
+.progressLine {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 0;
+    height: 25px;
+    border: none;
+    box-sizing: border-box;
+    background-color: indianred;
+    opacity: 60%;
+    border-radius: 7px;
+}
+
+.remove, .saveTodo, .removeTodo {
+    padding: 0 20px;
+    background-color: teal;
+    border: none;
+    color: white;
+    border-radius: 7px;
+}
+
+.bonus {
+   margin: 10px 0;
+    justify-content: right;
+}
+
+.saveTodo, .removeTodo {
+    margin: 10px;
+    margin-right: 0;
+    padding: 5px 20px;
+    background-color: teal;
+    border: none;
+    color: white;
+    border-radius: 7px;
+}
